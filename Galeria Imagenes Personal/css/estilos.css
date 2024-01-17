@@ -1,0 +1,120 @@
+:root {
+  --color: rgb(33, 25, 34);
+  --fondo-body: #ffffff;
+  --links: #676a79;
+}
+
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* 1REM = 10px */
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    line-height: 2;
+    background-color: var(--fondo-body);
+    color: var(--color);
+}
+/*ESTILOS GLOBALES*/
+
+a{
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Header */
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 3.2rem;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px){
+  .header {
+    text-align: center;
+    flex-direction: column;
+  }
+}
+
+.navegacion .links__navegacion{
+  margin-right: 2rem;
+  color: var(--links);
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+.navegacion .links__navegacion:hover{
+  color: #9B9B9B;
+}
+
+.navegacion .links__navegacion.active{
+  color: #1a1a1a;
+}
+
+.navegacion .links__navegacion:last-child{
+  margin-right: 0;
+}
+.logo {
+  color: var(--color);
+  display: inline-block;
+}
+/* Contenedor de todas las Imagenes */
+
+.contenedor {
+  max-width: 120rem;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.row {
+  display: flex;
+  /* La flex-wrappropiedad especifica si los elementos flexibles deben ajustarse o no. */
+  flex-wrap: wrap;
+}
+
+/* Creando 4 columns para ponerlas una al lado de la otra */
+
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column .img-foto {
+  margin-top: 0.8rem;
+  vertical-align: middle;
+  width: 100%;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+/* Diseño responsivo: crea un diseño de dos columnas en lugar de cuatro columnas */
+
+@media (max-width: 800px){
+  .column {
+    /*flex 50% me mostrara 2 columns
+    porque tenia 4 y al ponerle que sea flexible al 50%
+    pues es lojico que me mostrara 2 en ves de 4*/
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 600px){
+  .column{
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
