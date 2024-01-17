@@ -1,0 +1,696 @@
+html {
+  font-size: 62.5%;
+  box-sizing: border-box; /* Hack para Box Model **/
+  scroll-snap-type: y mandatory; /*la y es vertical y la x horizontal*/
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:root {
+  --header-color: #ffffff;
+  --color-general: rgba(0, 0, 0, 0.87);
+  --fuentes-general: "SoDo Sans SemiBold";
+  --gris-enlaces-footer: #777;
+  --font-weight-links-footer: 400;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: var(--color-general);
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  padding: 20px;
+  background-color: var(--header-color);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+}
+
+.contenedor {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+}
+
+.menu__navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+@media(max-width: 768px){
+  .menu__navbar {
+    flex-direction: column;
+  }
+}
+
+.contenedor__nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.menurewards a {
+  color: var(--color-general);
+  text-transform: uppercase;
+  margin-right: 20px;
+  font-weight: 800;
+  font-size: 0.875rem;
+  border-bottom: 3px solid transparent;
+  display: inline-block;
+}
+
+@media (max-width: 768px){
+  .menurewards a{
+    font-size: 1.875rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .menurewards a,
+  .menu__right {
+    font-size: 14px;
+  }
+}
+
+@media(max-width: 768px){
+  .menu__right{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    margin-top: 47px;
+  }
+
+  .menu__right .ubicacion-tienda{
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+}
+  
+
+
+.menurewards a:hover {
+  color: #00754a;
+  position: relative;
+}
+
+.menurewards a:hover::before {
+  bottom: -37px;
+  background: #00754a;
+  content: "";
+  height: 5px;
+  display: block;
+  position: absolute;
+  width: 100%;
+}
+
+.menu__right .ubicacion {
+  margin-right: 4px;
+}
+
+.menu__right .ubicacion-tienda {
+  font-weight: 600;
+  color: var(--color-general);
+}
+
+.menu__right .ubicacion-tienda:hover {
+  opacity: 0.8;
+}
+
+.menu__right .ingresar {
+  border-radius: 50px;
+  border: 1px solid #000;
+  padding: 7px 16px;
+  color: #000;
+  margin-left: 20px;
+}
+
+
+.menu__right .button__ingresar {
+  border-radius: 50px;
+  border: 1px solid #000;
+  padding: 7px 16px;
+  color: #000;
+  font-weight: 600;
+  margin-left: 20px;
+  transform: all 0.2s ease;
+}
+
+@media (max-width: 768px){
+  .menu__right .button__ingresar{
+    padding: 14px 16px;
+    text-align: center;
+    margin: 0;
+    font-size: 14px;
+  }
+}
+
+
+
+.menu__right .button__ingresar:hover {
+  opacity: 0.8;
+}
+
+.menu__right .button__unete {
+  border-radius: 50px;
+  border: 1px solid #000;
+  padding: 7px 16px;
+  color: #000;
+  margin-left: 20px;
+  background-color: var(--color-general);
+  color: var(--header-color);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+@media (max-width: 768px){
+  .menu__right .button__unete{
+    padding: 14px 16px;
+    text-align: center;
+    margin: 0;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+}
+
+.menu__right .button__unete:hover {
+  opacity: 0.8;
+}
+
+.hero-starbucks-menu {
+  background: url(../img/vasos-star.png);
+  background-color: #d5a286;
+  min-height: 400px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+
+.winter {
+  background: url(../img/winter.png);
+  background-color: #007270;
+  min-height: 400px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+@media (max-width: 768px) {
+  .winter {
+    min-height: 240px;
+    background-position: 0;
+  }
+
+  .parrafo p {
+    line-height: 1.6;
+  }
+}
+
+.hero-cajeta {
+  background: url(../img/2024-01_Cajeta-min.png);
+  background-color: #dbdb44;
+  min-height: 400px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.hero-starbuck-cajeta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: #dbdb44;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+@media (max-width: 768px) {
+  .hero-starbuck-cajeta {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .hero-cajeta {
+    min-height: 270px;
+    background-position: 0;
+  }
+}
+
+.parrafo-cajeta {
+  color: #007270;
+  line-height: 1.8;
+}
+
+.subtitulo {
+  color: #007270;
+}
+
+.textos-hero-cajeta {
+  text-align: center;
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+.textos-hero-cajeta {
+  padding: 20px;
+  max-width: none;
+}
+
+.winter-textos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: #007270;
+  margin-bottom: 25px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .winter-textos {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: normal;
+  }
+}
+
+.hero-grid-menu {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: #d5a286;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+@media (max-width: 768px) {
+  .hero-grid-menu {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .hero-starbucks-menu {
+    min-height: 260px;
+    background-position: 0;
+  }
+}
+
+.textos {
+  text-align: center;
+  max-width: 52%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .textos {
+    max-width: 90%;
+  }
+
+  .textos h2 {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .textos h2 {
+    font-size: 20px;
+  }
+}
+
+.parrafo {
+  font-size: 19px;
+}
+
+.winter-right {
+  color: #fff;
+}
+
+.bg-cafe-chiapas {
+  background: url(../img/cafe-chiapas.png);
+  background-color: #007270;
+  min-height: 400px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.bg-cafe-chiapas-starbucks {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: #007270;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+@media (max-width: 768px) {
+  .bg-cafe-chiapas-starbucks {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: normal;
+  }
+
+  .bg-cafe-chiapas {
+    min-height: 240px;
+    background-position: 0;
+  }
+}
+
+.titulo__cafe__chiapas {
+  color: var(--header-color);
+}
+
+.parrafo-chiapas {
+  color: var(--header-color);
+  line-height: 1.7;
+}
+
+.hero-recompensas {
+  background: url(../img/fondo-logo-starbucks.png);
+  background-color: #1e3932;
+  min-height: 400px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.hero-grid-recompensas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: #1e3932;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+@media (max-width: 768px) {
+  .hero-grid-recompensas {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .hero-recompensas {
+    min-height: 240px;
+  }
+  .textos-recompensas {
+    text-align: center;
+    max-width: 60%;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+
+  .sub-titulo {
+    font-size: 19px;
+    max-width: none;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  .parrafo-recompensas {
+    font-size: 14px;
+  }
+}
+
+.parrafo-recompensas {
+  color: #fff;
+  line-height: 2;
+}
+
+.textos-recompensas {
+  text-align: center;
+  max-width: 60%;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .textos-recompensas {
+    font-size: 19px;
+  }
+}
+
+.sub-titulo {
+  color: #fff;
+}
+
+.btn-app-movil {
+  border-radius: 50px;
+  border: 1px solid #fff;
+  padding: 7px 16px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.btn-app-movil:hover {
+  background-color: hsla(0, 0%, 100%, 0.12);
+}
+
+.hero-cachs-money {
+  background: url(../img/cachs-money.png);
+  background-color: #d4e9e2;
+  min-height: 400px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.hero-grid-cachs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: #d4e9e2;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+@media(max-width: 768px){
+  .hero-grid-cachs{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: normal;
+  }
+  .hero-cachs-money {
+    min-height: 240px;
+  }
+}
+
+.info {
+  color: #1e3932;
+  border: 1px solid #1e3932;
+}
+
+.sub-titulos {
+  color: #1e3932;
+}
+
+.sub-cachs {
+  color: #1e3932;
+  margin: 0 auto;
+}
+
+.cachs {
+  max-width: 61%;
+}
+
+.yetis {
+  background: url(../img/yetis-starbucks.png);
+  background-color: #8868ad;
+  min-height: 400px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.hero-starbuck-yetis {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: #8868ad;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+@media (max-width: 768px){
+  .hero-starbuck-yetis{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .yetis {
+    min-height: 240px;
+    background-position: 0;
+  }
+}
+
+.subtitulo-yetis,
+.parrafo-yetis {
+  color: #fff;
+  line-height: 2;
+}
+
+.promos-noticias {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 768px){
+  .promos-noticias{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .centro-hero{
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 768px){
+  .centro-hero .center-recientes{
+    font-size: 20px;
+  }
+}
+
+.noticias {
+  background: #dbdb44;
+  padding: 20px;
+}
+
+@media (max-width: 768px){
+  .noticias, .promos{
+    padding-bottom: 2rem;
+  }
+
+}
+
+.promos {
+  background-color: #007270;
+  padding: 20px;
+}
+
+/* CENTRO HERO */
+
+.centro-hero {
+  max-width: 45%;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.6;
+  color: #fff;
+  padding-bottom: 1rem;
+}
+
+.terminos {
+  max-width: 31%;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.6;
+  color: #fff;
+  padding-bottom: 1rem;
+}
+
+.footer {
+  -webkit-box-shadow: 1px 3px 8px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 3px 8px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 3px 8px 0px rgba(0, 0, 0, 0.75);
+  font-size: 16px;
+}
+
+.centro-hero a {
+  color: #fff;
+  border: 1px solid #fff;
+  font-size: 16px;
+}
+
+/* FOOTER */
+
+.textos-footer {
+  display: flex;
+  gap: 3rem;
+  margin-top: 20px;
+  padding: 1rem;
+}
+
+.textos-footer a {
+  display: block;
+  line-height: 2.5;
+  font-weight: var(--font-weight-links-footer);
+  color: var(--gris-enlaces-footer);
+}
+
+.left h3 {
+  font-weight: 400;
+}
+
+.right h3 {
+  font-weight: 400;
+  font-weight: 19px;
+}
+.textos-footer a:hover {
+  color: #000;
+}
+
+/* REDES SOCIALES */
+
+.redes-sociales {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+  border-top: 1px solid #eee;
+}
+
+/* SVG */
+
+svg {
+  margin-left: 30px;
+}
+
+.textos-footer-info-cookies {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 35px;
+}
+
+@media(max-width: 768px){
+  .textos-footer-info-cookies{
+    display: block;
+    line-height: 1.9;
+  }
+}
+
+
+.textos-footer-info-cookies a {
+  margin-right: 30px;
+}
+
+.textos-footer-info-cookies a {
+  color: #999;
+  padding: 0 10px 1px 0px;
+  border-right: 1px solid #999;
+}
+
+.textos-footer-info-cookies a:hover {
+  color: #777;
+}
+
+.copyright-span {
+  margin-top: 30px;
+}
+
+.copyright {
+  text-align: center;
+  color: #999;
+  display: block;
+  line-height: 1.2;
+}
+
+.mx {
+  font-size: 12px;
+  line-height: 2.1;
+}
